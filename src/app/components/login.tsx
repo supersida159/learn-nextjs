@@ -4,7 +4,7 @@ import styles from './login.module.css'
 import { useRouter } from 'next/navigation';
 
 
-export default function Signin(){
+export default function Login(){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const rounter=useRouter()
