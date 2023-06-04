@@ -4,6 +4,6 @@ import styles from './login.module.css'
 import { useRouter } from 'next/navigation';
 
 export default function Loginned(){
-    return <h1> loginned</h1>
+    return <h1>Login</h1>
 
 }
