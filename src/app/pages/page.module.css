@@ -1,0 +1,17 @@
+.maindiv{
+    display: flex;
+  flex-wrap: nowrap;
+  margin: 0px 40px 0px 40px;
+  padding: 100px 0px 100px;
+}
+.firstdiv{
+    padding-right: 32px;
+}
+.secondiv{
+    height: 456px;
+    width: 396px;
+}
+.imgdiv{
+    padding: 0px 100px 0px 0px;
+    margin-left: -32px;
+}

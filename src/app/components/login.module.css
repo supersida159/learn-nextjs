@@ -1,0 +1,37 @@
+.inputform{
+    background-color: aquamarine;
+    margin-right: auto;
+    margin-left: auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+} 
+.inputform input{
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+    height: 40px;
+    border: 1.4px solid black;
+}
+.inputform button{
+
+    margin-left: auto;
+    margin-top: 10px;
+    background-color: brown;
+    border-radius: 10px;
+    padding: 2px;
+    width: 100%;
+}
+.center-button{
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5px;
+}
+.line{
+    width: 100%;
+    background-color: aliceblue;
+    height: 2px;
+}
+.form{
+    text-align: center;
+}
