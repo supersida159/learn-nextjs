@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import styles from './login.module.css'
 import { useRouter } from 'next/navigation';
-
+import Cookies from 'js-cookie';
 
 export default function Login(){
     const [username, setUsername] = useState('');
@@ -24,7 +24,9 @@ export default function Login(){
             body: JSON.stringify(data)
           });
             const responseData = await response.json();
-            console.log(responseData);
+            console.log(responseData)
+            Cookies.set('token', "Bearer "+responseData.data.accessToken, {expires: 7, });
+            Cookies.set('refreshToken', responseData.data.refreshToken, {expires: 7, });
           if(responseData.notification=="Login successful."){
           try{
             const response= await fetch("http://localhost:3003/GetUserInfo",{

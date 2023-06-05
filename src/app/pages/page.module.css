@@ -1,7 +1,7 @@
 .maindiv{
     display: flex;
   flex-wrap: nowrap;
-  margin: 0px 40px 0px 40px;
+  margin: auto;
   padding: 100px 0px 100px;
 }
 .firstdiv{

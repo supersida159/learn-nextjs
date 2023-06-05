@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import Mainpage from './pages/page'
+import Mainpage1 from './mainpage/page'
 
 export default function Home() {
   return (
-    <Mainpage/>
+    <Mainpage1/>
   )
 }
