@@ -7,12 +7,33 @@ import { type } from 'os';
 
 
 export default function Mainpage1(){
-    const [data, setData] = useState({});
+    const [datafetch, setData] = useState({});
+    const [userdata,setuserdata] = useState({})
     const [refresh, setrefresh] = useState('');
     const rounter=useRouter()
     useEffect(() => {
         fetchData();
       }, []);
+     
+     
+      interface ObjectDisplayProps {
+        object: { [key: string]: any };
+      }
+      const ObjectDisplay: React.FC<ObjectDisplayProps> = ({ object }) => {
+        return (
+          <div>
+            <h2>Object Display</h2>
+            <ul>
+              {Object.entries(object).map(([key, value]) => (
+                <li key={key}>
+                  {key}: {value.toString()}
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      };  
+
     const fetchData = async() => {
         const tokenValue = Cookies.get('token');
         const refreshToken = Cookies.get('refreshToken');
@@ -41,7 +62,9 @@ export default function Mainpage1(){
                     console.log(xx)
                     if(xx.notification=="Get user info successful."){
                         setData(xx);
+                        setuserdata(xx.data)
                     }
+                    else(rounter.push("./pages"))
                 }
             }
             catch(error){
@@ -52,10 +75,13 @@ export default function Mainpage1(){
             rounter.push('./pages');
         }
     }
-    const objectData=Object.entries(data);
-    return(
-        <div>
-            <h1>user info</h1>
-        </div>
-    )
-}
+
+        return (
+            <div>
+              <h1>My App</h1>
+              <ObjectDisplay object={datafetch} />
+              <ObjectDisplay object={userdata} />
+            </div>
+          );
+    
+    }

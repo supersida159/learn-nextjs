@@ -4,6 +4,7 @@ import styles from './login.module.css'
 import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie';
 
+
 export default function Login(){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -38,7 +39,7 @@ export default function Login(){
             const xx=await response.json()
             console.log(xx.notification)
             if(xx.notification=="Get user info successful."){
-                rounter.push('/loginned')
+                rounter.push('/')
             }
           }
           catch(error){
@@ -82,7 +83,7 @@ export default function Login(){
             <div className={styles.line}></div>
             {/* <button onClick={()=>Getinfor("http://localhost:3003/GetUserInfo",accestoken)} type='submit'>Get infor</button> */}
            </form>
-           <button >Register</button>
+           <button onClick={()=>rounter.push('./register')} >register</button>
         </div>
     )
 }
